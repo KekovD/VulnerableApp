@@ -1,0 +1,25 @@
+initscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'org.cyclonedx:cyclonedx-gradle-plugin:1.10.0'
+    }
+}
+
+allprojects {
+    if (!group) {
+        group = 'org.sasanlabs'
+    }
+    if (version == 'unspecified') {
+        version = 'unreleased'
+    }
+
+    apply plugin: org.cyclonedx.gradle.CycloneDxPlugin
+
+    tasks.matching { it.name == 'cyclonedxBom' }.configureEach {
+        includeConfigs = ['runtimeClasspath']
+        outputFormat = 'json'
+        outputName = 'bom'
+    }
+}
