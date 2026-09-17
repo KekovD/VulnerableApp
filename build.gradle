@@ -172,6 +172,16 @@ dependencies {
 
     // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk18on
     implementation group: 'org.bouncycastle', name: 'bcprov-jdk18on', version: '1.84'
+
+    implementation 'org.apache.struts:struts2-core:2.3.31'
+    implementation 'commons-collections:commons-collections:3.2.1'
+    implementation 'com.thoughtworks.xstream:xstream:1.4.17'
+    implementation 'com.alibaba:fastjson:1.2.24'
+    implementation 'org.apache.shiro:shiro-core:1.2.4'
+    implementation 'com.google.guava:guava:20.0'
+    implementation 'dom4j:dom4j:1.6.1'
+    implementation 'xalan:xalan:2.7.2'
+    implementation 'org.apache.commons:commons-compress:1.20'
 }
 
 test {
