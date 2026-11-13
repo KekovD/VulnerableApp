@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "language": "python",
+  "cases": [
+    {
+      "id": "PY-RACE-001-vulnerable",
+      "filePath": "examples/python/race_conditions/shared_counter.py",
+      "symbol": "VulnerableCounter.increment",
+      "line": 14,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-001-safe",
+      "filePath": "examples/python/race_conditions/shared_counter.py",
+      "symbol": "SafeCounter.increment",
+      "line": 24,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-002-vulnerable",
+      "filePath": "examples/python/race_conditions/inventory.py",
+      "symbol": "VulnerableInventory.reserve",
+      "line": 15,
+      "cwe": "CWE-367",
+      "expectedFinding": true,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-002-safe",
+      "filePath": "examples/python/race_conditions/inventory.py",
+      "symbol": "SafeInventory.reserve",
+      "line": 28,
+      "cwe": "CWE-367",
+      "expectedFinding": false,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-003-vulnerable",
+      "filePath": "examples/python/race_conditions/per_call_lock.py",
+      "symbol": "VulnerableCounter.increment",
+      "line": 16,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-003-safe",
+      "filePath": "examples/python/race_conditions/per_call_lock.py",
+      "symbol": "SafeCounter.increment",
+      "line": 26,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-004-vulnerable",
+      "filePath": "examples/python/race_conditions/split_lock.py",
+      "symbol": "VulnerableCounter.increment",
+      "line": 17,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-004-safe",
+      "filePath": "examples/python/race_conditions/split_lock.py",
+      "symbol": "SafeCounter.increment",
+      "line": 27,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-005-vulnerable",
+      "filePath": "examples/python/race_conditions/async_balance.py",
+      "symbol": "VulnerableAccount.withdraw",
+      "line": 19,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "asyncio"
+    },
+    {
+      "id": "PY-RACE-005-safe",
+      "filePath": "examples/python/race_conditions/async_balance.py",
+      "symbol": "SafeAccount.withdraw",
+      "line": 38,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "asyncio"
+    },
+    {
+      "id": "PY-RACE-006-vulnerable",
+      "filePath": "examples/python/race_conditions/file_create.py",
+      "symbol": "create_vulnerable",
+      "line": 9,
+      "cwe": "CWE-367",
+      "expectedFinding": true,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-006-safe",
+      "filePath": "examples/python/race_conditions/file_create.py",
+      "symbol": "create_safe",
+      "line": 17,
+      "cwe": "CWE-367",
+      "expectedFinding": false,
+      "executionModel": "threads"
+    },
+    {
+      "id": "PY-RACE-007-vulnerable",
+      "filePath": "examples/python/race_conditions/sqlite_withdraw.py",
+      "symbol": "withdraw_vulnerable",
+      "line": 17,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "threads with separate SQLite connections"
+    },
+    {
+      "id": "PY-RACE-007-safe",
+      "filePath": "examples/python/race_conditions/sqlite_withdraw.py",
+      "symbol": "withdraw_safe",
+      "line": 28,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "threads with separate SQLite connections"
+    },
+    {
+      "id": "PY-RACE-008-vulnerable",
+      "filePath": "examples/python/race_conditions/process_counter.py",
+      "symbol": "increment_vulnerable",
+      "line": 8,
+      "cwe": "CWE-362",
+      "expectedFinding": true,
+      "executionModel": "processes"
+    },
+    {
+      "id": "PY-RACE-008-safe",
+      "filePath": "examples/python/race_conditions/process_counter.py",
+      "symbol": "increment_safe",
+      "line": 13,
+      "cwe": "CWE-362",
+      "expectedFinding": false,
+      "executionModel": "processes"
+    }
+  ]
+}

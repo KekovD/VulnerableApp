@@ -159,6 +159,18 @@ Running the scanner itself is out of scope — you supply the JSON. See
 schemas, matching rules, canonical vulnerability-type vocabulary, and `curl`
 examples.
 
+## Python race condition examples
+
+[`examples/python/race_conditions/`](examples/python/race_conditions/README.md) contains
+8 intentionally vulnerable Python scenarios and 8 fixed controls for SAST scanners:
+threaded shared state, incorrect locking, asyncio, file creation, SQLite, and
+multiprocessing. A JSON manifest records the expected findings and source locations.
+The reproducible examples use Python 3.9+ and the standard library only.
+
+```sh
+python3 -m unittest discover -s examples/python/race_conditions/tests -v
+```
+
 ## Contact
 In case you are stuck with any of the steps or understanding anything related to project and its goals, feel free to shoot a mail at karan.sasan@owasp.org or raise an [issue](https://github.com/SasanLabs/VulnerableApp/issues) and we will try our best to help you.
 
